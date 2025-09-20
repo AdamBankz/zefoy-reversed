@@ -4,7 +4,5 @@ This is my Zefoy reverse engineering journey, where I completely dissect every a
 
 ### Table of Contents 
 - [Intercepting Requests](https://)
-- [Signing](https://)
-- [Mobile](https://)
-  - [X-Gorgon](https://)
-  - [Other](https://)
+- [Signing Requests](https://)
+
