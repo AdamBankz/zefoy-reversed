@@ -59,5 +59,5 @@ var _0x475601 = CryptoJS.AES.encrypt(_0x1eee13, "43fdda1192dde7f8ffff7161e13580d
 ```js
 document.getElementById("captchaencoded").value = _0x475601;
 ```
-<br><br>
-By remaking the exact client info JSON gathered and using the static key that is exposed, we can generate our own `captcha_encoded` value. I will show you how
+
+
