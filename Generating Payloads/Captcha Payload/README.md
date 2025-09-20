@@ -89,7 +89,7 @@ const _0x2d89df = function (_0x2d8981) {
 const wrapped = "K9x!" + _0x3605c2 + "K9x!";
 ```
 
-Encodes the wrapped string in Base64 and then reverses the result to obfuscate even further.
+**Encodes the wrapped string in Base64 and then reverses the result to obfuscate even further.**
 ```js
   return (function (input) {
     let out = '';
@@ -122,3 +122,4 @@ if (_0x457738) {
   _0x457738.value = _0x2d89df;
 }
 ```
+
