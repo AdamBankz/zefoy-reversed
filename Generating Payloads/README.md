@@ -7,7 +7,7 @@ The headers sent in the request are `PHPSESSID` and `ltj`, which have been analy
 CAPTCHA Solving
 ---
 <img width="273" height="91" alt="image" src="https://github.com/user-attachments/assets/e9ec5055-b469-49a5-a2f6-171a632b78fc" /><br>
-When I solved the following CAPTCHA and submitted the solution, a POST request was made to `zefoy.com`, once the backend confirmed the solution was correct, the request got a 302 Response and my page refreshed, unlocking the dashboard. The CAPTCHA completion links to my PHPSESSID, enabling persistence. Ensuring that I do not have to redo it when refreshing the page.
+When I solved the following CAPTCHA and submitted the solution, a POST request was made to `zefoy.com`, once the backend confirmed the solution was correct, the request got a 302 Response and my page refreshed, unlocking the dashboard. The CAPTCHA completion links to my PHPSESSID.
 <br><br>
 The payload that was sent during submission is below. It looks overwhelming and complex, in reality it's just low-level encoding.
 <img width="2051" height="670" alt="image" src="https://github.com/user-attachments/assets/bbe5bad9-7e5e-46ce-992c-59b4efeba934" />
@@ -25,4 +25,11 @@ hidden_name = hidden_input["name"]
 
 # The captcha_encoded key is static and it's name will not change
 ```
-The value for the first key is the plain text of solution submitted. Simple and easy.
+1. The value for the first key is the plain text of solution submitted. Simple and easy.
+2. The value for the second key is an encoded string.
+3. The value for the third key is a ciphered JSON
+   - This includes `ct`, `iv` and `s`, which is Ciphertext, Initialisation Vector and the Salt.
+   - In order to decode this, you need the logic used to encode it.
+  
+Seeing this, I looked into Zefoy's Javascript. > https://zefoy.com/assets/53fbc84b11a13a7942a850361e5d7b49.js?v=1754384581<br>
+As they used [obfuscator.io](obfuscator.io) to obfuscate their Javascript, it was incredibly easy to make it readable.<br>
