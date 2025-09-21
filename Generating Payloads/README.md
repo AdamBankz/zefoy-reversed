@@ -1,4 +1,3 @@
-# Generating Payloads 
 
 CAPTCHA Payloads
 ---
@@ -30,4 +29,5 @@ In these 2 seperate requests made off the same session, the `e5f1eca2787f` value
 ```py
 boundary = '----WebKitFormBoundary' + ''.join(random.sample(string.ascii_letters + string.digits, 16))
 ````
+
 
